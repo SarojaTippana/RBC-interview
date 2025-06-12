@@ -1,0 +1,29 @@
+package com.rbc;
+
+import java.util.HashSet;
+
+public class Application {
+
+		    public static void findPairs(int[] arr, int target) {
+		        HashSet<Integer> seenNumbers = new HashSet<>();
+
+		        System.out.println("Pairs with sum " + target + ":");
+		        for (int num : arr) {
+		            int complement = target - num;
+		            if (seenNumbers.contains(complement)) {
+		                System.out.println("(" + complement + ", " + num + ")");
+		            }
+		            seenNumbers.add(num);
+		        }
+		    }
+
+		    public static void main(String[] args) {
+		        int[] arr = {2, 4, 3, 7, 1, 5};
+		        int target = 6;
+		        findPairs(arr, target);
+		    }
+		
+
+	}
+
+
